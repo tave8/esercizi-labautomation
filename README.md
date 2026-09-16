@@ -1,3 +1,51 @@
+# Come implementare la "strategia di alternanza"
+
+## Ragionamento A
+
+Ci sono tante variabili binarie quanti sono le strategie di alternanza, cioè ogni strategia di alternanza ha la propria variabile binaria. La strategia da applicare è ricevuta in input. Il cambio della strategia comporta un effetto istantaneo.
+
+Serve un meccanismo per assicurarsi che esattamente una strategia sia attiva alla volta (non meno di una, non più di una), cioè che il sistema non si trovi mai ad avere informazioni ambigue su quale strategia di alternanza sta essendo applicata in un dato istante. Quindi servirà anche una variabile binaria per rilevare questa ambiguità, quindi errore, che andrà comunicato in output.
+
+Serve anche un meccanismo per impostare una strategia di default, se nessuna strategia viene fornita.
+
+`
+INPUT
+strategia_alternanza_avvio: bool
+strategia_alternanza_meno_ore_lavorate: bool
+
+TEMP
+
+OUTPUT
+err_strategia_alternanza_ambigua: bool
+
+`
+
+## Ragionamento B
+
+Ogni strategia di alternanza è rappresentata come un numero. Le strategia di alternanza possibili sono mappate in una variabile di numero intero.
+
+La differenza tra "strategia alternanza input" e "strategia alternanza attuale" è permette il disaccoppiamento tra input e uso attuale. In poche parole, disaccoppiare "quello che ricevo in input" con "quello che il sistema sta ancora usando".
+
+In questo modo si può costruire una logica del tipo "cambia strategia solo quando quella attuale ha soddisfatto una certa condizione" oppure "verifica prima che la strategia in input sia valida, poi cambia la strategia attuale che sia uguale a quella in input".
+
+Mappatura:
+
+## numero | strategia
+
+0 avvio (default)
+1 meno ore lavorate
+
+`
+INPUT
+strategia_alternanza_input: int
+
+TEMP
+strategia_alternanza_attuale: int
+
+OUTPUT
+ERR_STRG_ALTERNANZA_INVALIDA: bool
+`
+
 # Alternanza per numero ore (parte quella con meno ore lavorate)
 
 In questa variante dell'alternanza pompe per numero ore, parte la pompa con meno ore lavorate.
