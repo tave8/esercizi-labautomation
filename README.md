@@ -1,3 +1,16 @@
+# Esercizio: 2 pompe, 2 max, 3 soglie
+
+## Soglia | Numero pompe da comandare
+
+Sotto Soglia min 0
+Sopra Soglia max 1 1
+Sopra Soglia max 2 2
+
+Il requisito è che al massimo 2 pompe siano comandate contemporaneamente, ma questo solo se entrambe sono usabili e se le due soglie massime sono raggiunte.
+
+Se le due soglie massime sono raggiunte ma almeno una pompa non è usabile, bisogna comandare le altre pompe usabili. 
+
+
 # Come implementare la "strategia di alternanza"
 
 ## Ragionamento A
@@ -62,8 +75,6 @@ Serve un meccanismo per eseguire la logica del cambiare la prossima pompa candid
 
 IF ora e minuto = 24:00 ALLORA
 rising edge, cambia prossima pompa candidata
-
-
 
 # Alternanza per numero ore (parte quella con meno ore lavorate)
 
