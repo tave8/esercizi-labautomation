@@ -34,6 +34,7 @@ Mappatura:
 
 0 avvio (default)
 1 meno ore lavorate
+1 giornaliera
 
 `
 INPUT
@@ -45,6 +46,24 @@ strategia_alternanza_attuale: int
 OUTPUT
 ERR_STRG_ALTERNANZA_INVALIDA: bool
 `
+
+# Alternanza giornaliera
+
+Alternanza giornaliera significa alternare le pompe al raggiungimento di una certa ora.
+
+Per fare questo, possiedo due strumenti:
+
+- L'ora e minuto del PLC, che posso comparare con un orario predefinito (es: quando scocca mezzanotte, alterna pompe (imposta la prossima candidata))
+- Gli Schedule Blocks, che permettono di impostare dei bit con logiche di tempo specifiche (ogni giorno alle ore X, da ora Y ecc. -- alza il bit di una variabile)
+
+Caso con 2 pompe: Quando scocca mezzanotte, modifica la prossima pompa candidata (ovviamente, solo se la prossima candidata è anche usabile).
+
+Serve un meccanismo per eseguire la logica del cambiare la prossima pompa candidata, solo una volta, allo scoccare della mezzanotte. Forse un rising edge all'ora 24:00?
+
+IF ora e minuto = 24:00 ALLORA
+rising edge, cambia prossima pompa candidata
+
+
 
 # Alternanza per numero ore (parte quella con meno ore lavorate)
 
