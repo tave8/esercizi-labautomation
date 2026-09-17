@@ -2,8 +2,8 @@
 <ProjectDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectVersion>3.0.0.0</ProjectVersion>
   <ManagementLevel>FunctLevelMan21_0</ManagementLevel>
-  <Name>es1_2pompe_1max_2soglie_scelta_alternanza</Name>
-  <FullName>C:\Users\giuse\Desktop\PLC-projects\esercizi-labautomation\es1_2pompe_1max_2soglie_scelta_alternanza.smbp</FullName>
+  <Name>es1_2pompe_1max_2soglie_alternanza_giornaliera_con_minor_numero_ore</Name>
+  <FullName>C:\Users\giuse\Desktop\PLC-projects\esercizi-labautomation\es1_2pompe_1max_2soglie_alternanza_giornaliera_con_minor_numero_ore.smbp</FullName>
   <CurrentCultureName>en-GB</CurrentCultureName>
   <SoftwareConfiguration>
     <Pous>
@@ -14,16 +14,18 @@
           <RungEntity>
             <LadderElements>
               <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <OperationExpression>%MW0 := 1</OperationExpression>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW0 = 0</ComparisonExpression>
                 <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>8</Column>
+                <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
@@ -53,20 +55,22 @@
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>0</Column>
+                <Column>3</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW0 = 0</ComparisonExpression>
+                <ElementType>Operation</ElementType>
+                <Comment />
+                <Symbol />
+                <OperationExpression>%MW0 := 1</OperationExpression>
                 <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>1</Column>
+                <Column>8</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
             </LadderElements>
@@ -81,89 +85,7 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Pompa 0  (primo avvio) è Pompa 1</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%SW51 = 16#0000</ComparisonExpression>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Coil</ElementType>
-                <Descriptor>%M4</Descriptor>
-                <Comment>E' mezzanotte?</Comment>
-                <Symbol>ORA_E_00</Symbol>
-                <Row>0</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    [ %SW51 = 16#0000 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ST    %M4</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>E' mezzanotte? (ora in cui si alternano pompe, se scelta strategia giornaliera)</MainComment>
+            <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -380,51 +302,25 @@
           <RungEntity>
             <LadderElements>
               <LadderEntity>
-                <ElementType>If</ElementType>
-                <Descriptor>0</Descriptor>
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Then</ElementType>
-                <Descriptor>0</Descriptor>
-                <Symbol />
-                <Row>0</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
                 <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%IW0.0 &lt;= 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%IW0.0 &gt;= 0</ComparisonExpression>
+                <ComparisonExpression>%SW51 = 16#0000</ComparisonExpression>
                 <Row>0</Row>
                 <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Line</ElementType>
+                <ElementType>Coil</ElementType>
+                <Descriptor>%M4</Descriptor>
+                <Comment />
+                <Symbol>ORA_E_00</Symbol>
                 <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
+                <Column>10</Column>
+                <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
+                <Column>9</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
@@ -436,57 +332,6 @@
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>IF0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %IW0.0 &gt;= 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %IW0.0 &lt;= 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>THEN0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia Strategia Alternanza solo se valida</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <OperationExpression>%MW1 := %IW0.0</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
                 <Column>7</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
@@ -500,6 +345,18 @@
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
                 <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
@@ -508,535 +365,120 @@
                 <Column>4</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    [ %SW51 = 16#0000 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>ST    %M4</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name />
+            <MainComment>E' mezzanotte?</MainComment>
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
                 <Row>0</Row>
                 <Column>3</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
                 <Row>0</Row>
-                <Column>2</Column>
+                <Column>5</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
                 <Row>0</Row>
                 <Column>8</Column>
                 <ChosenConnection>Down, Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>ResetCoil</ElementType>
-                <Descriptor>%Q0.2</Descriptor>
+                <ElementType>Operation</ElementType>
                 <Comment />
-                <Symbol>ERR_STRG_ALTERNANZA_INVALIDA</Symbol>
+                <Symbol />
+                <OperationExpression>%MW0 := 2</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NormalContact</ElementType>
+                <Descriptor>%M4</Descriptor>
+                <Comment />
+                <Symbol>ORA_E_00</Symbol>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NegatedContact</ElementType>
+                <Descriptor>%M5</Descriptor>
+                <Comment />
+                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>SetCoil</ElementType>
+                <Descriptor>%M5</Descriptor>
+                <Comment />
+                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
                 <Row>1</Row>
                 <Column>10</Column>
                 <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
+                <Comment />
+                <Symbol />
                 <Row>1</Row>
                 <Column>8</Column>
                 <ChosenConnection>Up, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
                 <Row>1</Row>
                 <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW1 := %IW0.0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>R     %Q0.2</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment />
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Else</ElementType>
-                <Descriptor>0</Descriptor>
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>SetCoil</ElementType>
-                <Descriptor>%Q0.2</Descriptor>
-                <Comment />
-                <Symbol>ERR_STRG_ALTERNANZA_INVALIDA</Symbol>
-                <Row>0</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>ELSE0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>S     %Q0.2</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment />
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>EndIf</ElementType>
-                <Descriptor>0</Descriptor>
-                <Symbol />
-                <Row>0</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ENDIF0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment />
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 2</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M1</Descriptor>
-                <Comment />
-                <Symbol>P2_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M0</Descriptor>
-                <Comment />
-                <Symbol>P1_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
-                <Comment />
-                <Symbol>LVL_MAX</Symbol>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW1 = 0</ComparisonExpression>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Avvio)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 1</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
-                <Comment />
-                <Symbol>LVL_MAX</Symbol>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M1</Descriptor>
-                <Comment />
-                <Symbol>P2_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M0</Descriptor>
-                <Comment />
-                <Symbol>P1_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW1 = 0</ComparisonExpression>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Avvio)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 2</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>3</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Comparison</ElementType>
                 <ComparisonExpression>%C1.V &lt; %C0.V</ComparisonExpression>
-                <Row>1</Row>
-                <Column>6</Column>
-                <ChosenConnection>Up, Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Row>1</Row>
-                <Column>5</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M1</Descriptor>
-                <Comment />
-                <Symbol>P2_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M0</Descriptor>
-                <Comment />
-                <Symbol>P1_USABILE</Symbol>
                 <Row>0</Row>
                 <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
-                <Comment />
-                <Symbol>LVL_MAX</Symbol>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
-                <InstructionLine>LD    %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 1 ]</InstructionLine>
+                <InstructionLine>LD    %M4</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -1044,33 +486,62 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>AND(N %M0</InstructionLine>
+                <InstructionLine>ANDN  %M5</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>OR    [ %C1.V &lt; %C0.V ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>)</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M1</InstructionLine>
+                <InstructionLine>AND   [ %C1.V &lt; %C0.V ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
                 <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>S     %M5</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Meno ore lavorate)</MainComment>
+            <MainComment>Alternanza pompe giornaliera con minor ore lavorate</MainComment>
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
           <RungEntity>
             <LadderElements>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
               <LadderEntity>
                 <ElementType>Operation</ElementType>
                 <Comment />
@@ -1082,342 +553,54 @@
               </LadderEntity>
               <LadderEntity>
                 <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
+                <Descriptor>%M4</Descriptor>
                 <Comment />
-                <Symbol>LVL_MAX</Symbol>
+                <Symbol>ORA_E_00</Symbol>
                 <Row>0</Row>
                 <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M1</Descriptor>
+                <Descriptor>%M5</Descriptor>
                 <Comment />
-                <Symbol>P2_USABILE</Symbol>
+                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
                 <Row>0</Row>
-                <Column>6</Column>
+                <Column>4</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Comparison</ElementType>
+                <ElementType>SetCoil</ElementType>
+                <Descriptor>%M5</Descriptor>
                 <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
+                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
+                <Row>1</Row>
+                <Column>10</Column>
+                <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
                 <Row>1</Row>
-                <Column>5</Column>
+                <Column>8</Column>
                 <ChosenConnection>Up, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M0</Descriptor>
-                <Comment />
-                <Symbol>P1_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
+                <Row>1</Row>
+                <Column>9</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Comparison</ElementType>
                 <ComparisonExpression>%C0.V &lt; %C1.V</ComparisonExpression>
-                <Row>1</Row>
+                <Row>0</Row>
                 <Column>6</Column>
-                <ChosenConnection>Up, Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
-                <InstructionLine>LD    %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND(N %M1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>OR    [ %C0.V &lt; %C1.V ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>)</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Meno ore lavorate)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 2</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>SetCoil</ElementType>
-                <Descriptor>%M5</Descriptor>
-                <Comment />
-                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
-                <Row>1</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M5</Descriptor>
-                <Comment />
-                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M4</Descriptor>
-                <Comment>E' mezzanotte?</Comment>
-                <Symbol>ORA_E_00</Symbol>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW1 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW1 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M4</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M5</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>S     %M5</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Giornaliera)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 1</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>SetCoil</ElementType>
-                <Descriptor>%M5</Descriptor>
-                <Comment />
-                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
-                <Row>1</Row>
-                <Column>10</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M5</Descriptor>
-                <Comment />
-                <Symbol>ALTERNATO_POMPE_GIORNALIERO</Symbol>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M4</Descriptor>
-                <Comment>E' mezzanotte?</Comment>
-                <Symbol>ORA_E_00</Symbol>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW1 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M4</InstructionLine>
+                <InstructionLine>LD    %M4</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -1426,6 +609,10 @@
               </InstructionLineEntity>
               <InstructionLineEntity>
                 <InstructionLine>ANDN  %M5</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND   [ %C0.V &lt; %C1.V ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -1438,208 +625,21 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Giornaliera)</MainComment>
+            <MainComment>Alternanza pompe giornaliera con minor ore lavorate</MainComment>
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
           <RungEntity>
             <LadderElements>
               <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 2</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M1</Descriptor>
-                <Comment />
-                <Symbol>P2_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
                 <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M0</Descriptor>
+                <Descriptor>%M4</Descriptor>
                 <Comment />
-                <Symbol>P1_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
-                <Comment />
-                <Symbol>LVL_MAX</Symbol>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 2</ComparisonExpression>
+                <Symbol>ORA_E_00</Symbol>
                 <Row>0</Row>
                 <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW1 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Giornaliera)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 1</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M0</Descriptor>
-                <Comment />
-                <Symbol>P1_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M1</Descriptor>
-                <Comment />
-                <Symbol>P2_USABILE</Symbol>
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <Comment />
-                <Symbol />
-                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%I0.7</Descriptor>
-                <Comment />
-                <Symbol>LVL_MAX</Symbol>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 2</ComparisonExpression>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW1 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %I0.7</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW0 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   %M0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 1 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>Cambia prossima pompa candidata (Strategia: Giornaliera)</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
               <LadderEntity>
                 <ElementType>ResetCoil</ElementType>
                 <Descriptor>%M5</Descriptor>
@@ -1688,33 +688,25 @@
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NegatedContact</ElementType>
-                <Descriptor>%M4</Descriptor>
-                <Comment>E' mezzanotte?</Comment>
-                <Symbol>ORA_E_00</Symbol>
-                <Row>0</Row>
                 <Column>3</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 2</ComparisonExpression>
+                <ElementType>Line</ElementType>
                 <Row>0</Row>
-                <Column>0</Column>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW1 = 2 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>ANDN  %M4</InstructionLine>
+                <InstructionLine>LDN   %M4</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -1723,7 +715,211 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Resetta alternato pompe (Strategia: Giornaliera)</MainComment>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <Comment />
+                <Symbol />
+                <OperationExpression>%MW0 := 2</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NormalContact</ElementType>
+                <Descriptor>%I0.7</Descriptor>
+                <Comment />
+                <Symbol>LVL_MAX</Symbol>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW0 = 1</ComparisonExpression>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NegatedContact</ElementType>
+                <Descriptor>%M0</Descriptor>
+                <Comment />
+                <Symbol>P1_USABILE</Symbol>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NormalContact</ElementType>
+                <Descriptor>%M1</Descriptor>
+                <Comment />
+                <Symbol>P2_USABILE</Symbol>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    %I0.7</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND   [ %MW0 = 1 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>ANDN  %M0</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND   %M1</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name />
+            <MainComment>Cambia prossima pompa candidata (se non usabile)</MainComment>
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <Comment />
+                <Symbol />
+                <OperationExpression>%MW0 := 1</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NormalContact</ElementType>
+                <Descriptor>%I0.7</Descriptor>
+                <Comment />
+                <Symbol>LVL_MAX</Symbol>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NormalContact</ElementType>
+                <Descriptor>%M0</Descriptor>
+                <Comment />
+                <Symbol>P1_USABILE</Symbol>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>NegatedContact</ElementType>
+                <Descriptor>%M1</Descriptor>
+                <Comment />
+                <Symbol>P2_USABILE</Symbol>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW0 = 2</ComparisonExpression>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    %I0.7</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND   [ %MW0 = 2 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>ANDN  %M1</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND   %M0</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MW0 := 1 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name />
+            <MainComment>Cambia prossima pompa candidata (se non usabile)</MainComment>
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -1800,35 +996,13 @@
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
                 <Column>6</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
+                <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
                 <Column>7</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 0</ComparisonExpression>
-                <Row>1</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Row>1</Row>
-                <Column>6</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 2</OperationExpression>
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
             </LadderElements>
             <InstructionLines>
@@ -1849,28 +1023,12 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>MPS</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
                 <InstructionLine>S     %Q0.0</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>MPP</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 2 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Comanda Pompa 1 se usabile</MainComment>
+            <MainComment>Comanda Pompa 1</MainComment>
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -1916,7 +1074,7 @@
                 <ElementType>Line</ElementType>
                 <Row>0</Row>
                 <Column>6</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
+                <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
@@ -1949,28 +1107,6 @@
                 <Column>4</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW1 = 0</ComparisonExpression>
-                <Row>1</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%MW0 := 1</OperationExpression>
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Row>1</Row>
-                <Column>6</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
@@ -1990,28 +1126,12 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>MPS</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
                 <InstructionLine>S     %Q0.1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>MPP</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW1 = 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW0 := 1 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Comanda Pompa 2 se usabile</MainComment>
+            <MainComment>Comanda Pompa 2</MainComment>
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -2266,7 +1386,7 @@
                 <Symbol>CONTATORE_P1_SECONDI_LAVORATI</Symbol>
                 <Row>0</Row>
                 <Column>3</Column>
-                <ChosenConnection>Right</ChosenConnection>
+                <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
@@ -2316,7 +1436,7 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Conta secondi lavorati (Pompa 1)</MainComment>
+            <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -2347,7 +1467,7 @@
                 <Symbol>CONTATORE_P2_SECONDI_LAVORATI</Symbol>
                 <Row>0</Row>
                 <Column>3</Column>
-                <ChosenConnection>Right</ChosenConnection>
+                <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
@@ -2391,7 +1511,7 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name />
-            <MainComment>Conta secondi lavorati (Pompa 2)</MainComment>
+            <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
           </RungEntity>
@@ -2439,6 +1559,11 @@
             <ValueRepresentation>BoolNumeric</ValueRepresentation>
           </WatchListItemEntity>
           <WatchListItemEntity>
+            <Address>%M4</Address>
+            <IsTraced>false</IsTraced>
+            <ValueRepresentation>BoolNumeric</ValueRepresentation>
+          </WatchListItemEntity>
+          <WatchListItemEntity>
             <Address>%C0.V</Address>
             <IsTraced>false</IsTraced>
             <ValueRepresentation>Decimal</ValueRepresentation>
@@ -2447,21 +1572,6 @@
             <Address>%C1.V</Address>
             <IsTraced>false</IsTraced>
             <ValueRepresentation>Decimal</ValueRepresentation>
-          </WatchListItemEntity>
-          <WatchListItemEntity>
-            <Address>%IW0.0</Address>
-            <IsTraced>false</IsTraced>
-            <ValueRepresentation>Decimal</ValueRepresentation>
-          </WatchListItemEntity>
-          <WatchListItemEntity>
-            <Address>%MW1</Address>
-            <IsTraced>false</IsTraced>
-            <ValueRepresentation>Decimal</ValueRepresentation>
-          </WatchListItemEntity>
-          <WatchListItemEntity>
-            <Address>%Q0.2</Address>
-            <IsTraced>false</IsTraced>
-            <ValueRepresentation>BoolNumeric</ValueRepresentation>
           </WatchListItemEntity>
         </WatchListItemEntities>
       </WatchListEntity>
@@ -2513,7 +1623,6 @@
         <Address>%M4</Address>
         <Index>4</Index>
         <Symbol>ORA_E_00</Symbol>
-        <Comment>E' mezzanotte?</Comment>
       </MemoryBit>
       <MemoryBit>
         <Address>%M5</Address>
@@ -3588,11 +2697,6 @@
         <Index>0</Index>
         <Symbol>PROSSIMA_POMPA_CANDIDATA</Symbol>
       </MemoryWord>
-      <MemoryWord>
-        <Address>%MW1</Address>
-        <Index>1</Index>
-        <Symbol>STRG_ALTERNANZA_ATTUALE</Symbol>
-      </MemoryWord>
     </MemoryWords>
     <MemoryDoubleWords />
     <MemoryFloats />
@@ -3909,7 +3013,6 @@
           <DiscretOutput>
             <Address>%Q0.2</Address>
             <Index>2</Index>
-            <Symbol>ERR_STRG_ALTERNANZA_INVALIDA</Symbol>
           </DiscretOutput>
           <DiscretOutput>
             <Address>%Q0.3</Address>
@@ -3968,7 +3071,7 @@
           <AnalogIO>
             <Address>%IW0.0</Address>
             <Index>0</Index>
-            <Symbol>STRG_ALTERNANZA_INPUT</Symbol>
+            <Symbol>NUMERO_MIN_PRESET</Symbol>
             <Type>
               <Value>0</Value>
               <Name>Type_0_10V</Name>
