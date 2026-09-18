@@ -1,3 +1,29 @@
+# Esercizio: 4 pompe, 3 max, 4 soglie, alternanza meno ore
+
+BUG: Quando la Pompa 1 ha il contatore secondi lavorati a 0, dovrebbe essere comandata perché 0 è più piccolo degli altri contatori.
+
+Ad ogni soglia max raggiunta, comanda la pompa con minor ore lavorate.
+
+Tieni in considerazione che una pompa può essere non usabile o già comandata.
+
+Quindi, ad ogni soglia max raggiunta, comanda la pompa con minor ore lavorate, delle pompe usabili e non comandate.
+
+```
+scan cycle:
+    prossima_pompa_da_comandare = 0
+    ultimo_ore_lavorate = 0
+
+    foreach pompa in pompe:
+        if pompa.usabile AND NOT pompa.comandata:
+            if pompa.ore_lavorate < ultimo_ore_lavorate OR ultimo_ore_lavorate = 0:
+                prossima_pompa_da_comandare = pompa
+                ultimo_ore_lavorate = pompa.ore_lavorate
+
+    comanda prossima_pompa_da_comandare, se diversa da 0
+
+
+```
+
 # Esercizio: 2 pompe, 2 max, 3 soglie
 
 ## Soglia | Numero pompe da comandare
@@ -8,8 +34,7 @@ Sopra Soglia max 2 2
 
 Il requisito è che al massimo 2 pompe siano comandate contemporaneamente, ma questo solo se entrambe sono usabili e se le due soglie massime sono raggiunte.
 
-Se le due soglie massime sono raggiunte ma almeno una pompa non è usabile, bisogna comandare le altre pompe usabili. 
-
+Se le due soglie massime sono raggiunte ma almeno una pompa non è usabile, bisogna comandare le altre pompe usabili.
 
 # Come implementare la "strategia di alternanza"
 
