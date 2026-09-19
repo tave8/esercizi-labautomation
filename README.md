@@ -1,3 +1,55 @@
+# Esercizio: 4 pompe, 3 max, 4 soglie, alternanza giornaliera con meno ore
+
+
+# Ragionamento A
+
+Alterna le pompe 1 volta al giorno. La prossima pompa da comandare sarà quella con minor ore, e l'alternanza viene decisa solo 1 volta al giorno.
+
+1 volta al giorno, viene deciso l'ordine in cui le pompe verranno comandate ad ogni soglia raggiunta.
+
+Quell'ordine viene mantenuto fino al prossimo giorno, in cui l'ordine viene aggiornato.
+
+Da una decisione alla prossima, l'ordine viene alterato solo se qualche pompa diventa non usabile.
+
+`ordine_prima_pompa` e simili variabili contengono il numero di pompa da attivare, nell'ordine specificato (prima, seconda, ecc.).
+
+Se non esista una pompa in questo ordine (sarà uguale a 0), allora significa che non ci sono abbastanza pompe con meno ore, quindi imposta la prima che puoi.
+
+Quindi:
+
+```
+scan cycle:
+  
+  if e_mezzanotte AND NOT deciso_ordine:
+    ordine_prima_pompa = pompa con meno ore lavorate tra quelle usabili 
+    ordine_seconda_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_prima_pompa
+    ordine_terza_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_seconda_pompa
+    ordine_quarta_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != odine_terza_pompa
+
+    deciso_ordine = true
+
+  if NOT e_mezzanotte: 
+    deciso_ordine = false
+
+  
+
+
+```
+
+Se qualche pompa diventa non usabile (avendo già l'ordine pompe) bisogna modificare in qualche modo l'ordine pompe, sostituendo la prima pompa usabile (indipendentemente da ore lavorate) con quella che è appena diventata non usabile.
+
+Funzionamento: Ad ogni soglia massima raggiunta, viene comandata la pompa nel rispettivo ordine già deciso.
+
+Ad esempio, alla soglia 1 massima, viene comandata la pompa ordine_prima_pompa. Alla soglia 2 massima, viene comandata la pompa ordine_seconda_pompa.
+
+
+# Ragionamento B
+
+L'implementazione più semplice prevede un ordine delle pompe da comandare. Questo ordine non tiene in considerazione né l'usabilità della pompa al momento del rinnovo ordine, né se la pompa è attualmente comandata. Questo perché questi ultimi sono stati che possono cambiare in qualsiasi momento dopo il rinnovo ordine. Quindi è come fare un piano di battaglia, e poi adattarsi una volta in campo.
+
+Se una pompa (ad esempio, la prima pompa nell'ordine) risulta non usabile al momento di comando, allora la prima pompa usabile viene comandata. Quindi una volta rinnovato, l'ordine *non* viene modificato. Quindi se nessuna pompa diventa inusabile dal rinnovo dell'ordine, l'ordine al momento `t2` (poco prima del rinnovo dell'ordine X, ad esempio alle ore 23:59) mostra correttamente lo stesso ordine delle pompe, da quella con meno ore a quella con più ore, al momento `t1` (appena rinnovato l'ordine X, poco dopo le ore 00:00). 
+
+
 # Esercizio: 4 pompe, 3 max, 4 soglie, alternanza meno ore
 
 BUG: Quando la Pompa 1 ha il contatore secondi lavorati a 0, dovrebbe essere comandata perché 0 è più piccolo degli altri contatori.
