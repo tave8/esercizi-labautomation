@@ -446,11 +446,11 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>AND   [ %IW0.0 &gt;= 0 ]</InstructionLine>
+                <InstructionLine>AND [ %IW0.0 &gt;= 0 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>AND   [ %IW0.0 &lt;= 2 ]</InstructionLine>
+                <InstructionLine>AND [ %IW0.0 &lt;= 2 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -647,7 +647,7 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>S     %Q0.2</InstructionLine>
+                <InstructionLine>S  %Q0.2</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
@@ -729,7 +729,7 @@
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
-                <InstructionLine>LD    1</InstructionLine>
+                <InstructionLine>LD  1</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -3969,6 +3969,7 @@
             <Address>%IW0.0</Address>
             <Index>0</Index>
             <Symbol>STRG_ALTERNANZA_INPUT</Symbol>
+            <Comment>0 = avvio; 1 = meno ore; 2 = giornaliera semplice;</Comment>
             <Type>
               <Value>0</Value>
               <Name>Type_0_10V</Name>
