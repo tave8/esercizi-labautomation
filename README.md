@@ -1,3 +1,47 @@
+# Esercizio: 2 pompe, 2 max, 4 soglie, spegnimento graduale semplice
+
+Spegnimento graduale si riferisce ad avere più soglie in cui le pompe vengono disattivate. Cioè, invece di disattivare tutte le pompe all'aver passato sotto l'unica soglia minima, ci sono più soglie minime. 
+
+Questo permette alla portata di essere gestita in maniera più "fluida", meno brusca. 
+
+Mi chiedo se debba esistere l'assunto che `min1 < max1 < min2 < max2`, o se abbia perfino senso domandarsi se abbia senso considerarlo.
+
+"Spegnimento graduale" si riferisce a come le pompe vengono comandate e disattivate.
+
+L'attributo "semplice" si riferisce alla decisione di quale pompa viene scelta per essere comandata o disattivata. Nello specifico, l'accoppiamento stretto tra soglia e identificativo pompa viene stabilito. Quindi soglia 1 avrà "assegnato" pompa 1, soglia 2 avrà assegnato pompa 2, e così via.
+
+Nello specifico, stiamo parlando di soglia minima e massima. Una soglia minima è una soglia tale che raggiungere sotto di quella soglia causa la disattivazione di una pompa (visto che stiamo associando una pompa a una coppia di soglie). Una soglia massima è una soglia tale che raggiungere sopra di quella soglia causa l'attivazione di una pompa.
+
+Quindi: 
+
+- *Raggiunto sotto soglia minima* è un caso di falling edge (1 -> 0)
+- *Raggiunto sopra soglia massima* è un caso di rising edge (0 -> 1)
+
+Visto che stiamo associando una pompa ad una coppia di soglie, e ogni coppia di soglie ha soglia minima e soglia massima, allora per una data coppia di soglie, la stessa pompa verrà attivata o disattivata.
+
+
+```  
+    lvl                
+     ^
+     |                                              ---
+max2 | ---------------------------------------------------
+     |            ---                               |  |
+     |           |   |                             |    --
+min2 | ---------------------------------------------------
+     |          |     --                         --
+     |         |        |                       |
+max1 | ---------------------------------------------------
+     |      ---        --             --       |
+     |     |              |         |   |     |
+min1 | ---------------------------------------------------
+     |  ---               ----     |    |    |
+     | |                      -----      ----
+     |
+     ----------------------------------------------------> t
+
+```
+
+
 # Esercizio: 4 pompe, 3 max, 4 soglie, alternanza giornaliera con meno ore
 
 
