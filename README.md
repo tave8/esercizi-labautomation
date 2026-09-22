@@ -1,4 +1,49 @@
+# Esercizio: 2 pompe, 2 max, misura di livello e richiesta attivazioni
+
+Il livello attuale non è più definito da soglie discrete, ma è un valore analogico. Il numero di pompe da attivare dipende dal livello raggiunto. Il livello raggiunto, espresso come valore analogico in input, va scalato. Per scalare questo livello analogico in percentuale, e quindi per determinare la percentuale di livello raggiunto, serve scalare questo livello analogico in input. Serve quindi definire il livello massimo, che rappresenta il 100%.
+
+```
+INPUT
+  lvl_input (valore grezzo dal sensore. es: 0-10000)
+  soglia_min_perc
+  soglia_max1_perc
+  soglia_max2_perc
+
+COSTANTI
+  min_scala_grezzo (minimo del valore grezzo del segnale. es: 0)
+  max_scala_grezzo (massimo del valore grezzo del segnale. es: 10000) 
+  min_scala_fisica (minimo fisico del sensore. es: 0cm)
+  max_scala_fisica (massimo fisico del sensore. es: 150cm)
+
+TEMP
+  lvl_perc
+  passato_soglia_min
+  passato_soglia_max1
+  passato_soglia_max2
+
+OUTPUT
+  p1_cmd
+  p2_cmd
+
+```
+
+livello_% = (valore_grezzo - grezzo_min) * 100 / (grezzo_max - grezzo_min)
+
+
+
+## Prima implementazione
+
+Nella prima implementazione ho 1 soglia minima (in comune) e 2 soglie massime. Ovviamente le soglie sono in percentuale.
+
+Sotto la soglia minima, tutte le pompe sono disattivate. Al superamento della prima soglia massima in percentuale, una pompa viene attivata. Al superamento della seconda soglia massima in percentuale, l'altra pompa viene attivata.
+
+
+
 # Esercizio: 4 pompe, 3 max, 6 soglie, spegnimento graduale semplice
+
+Spegnimento graduale significa che viene disattivata la pompa associata alla soglia sotto la quale il livello è appena sceso. Bisogna considerare che questo accoppiamento forte tra pompa e coppia di soglie, viene "rotto" quando una pompa non è usabile. Questo significa che l'ordine iniziale di attivazione/disattivazione delle pompe, deve essere cambiato.
+
+Assumiamo il caso più semplice, quello in cui non si considera il fatto che una pompa possa venire disattivata e che un'altra debba prendere il suo posto. Assumo quindi che, letteralmente, ad ogni coppia di soglia viene attivata o disattivata la stessa pompa nell'ordine.
 
 ```
 
@@ -16,12 +61,39 @@ min1
 
 ```
 
+La prima implementazione quindi non tiene in considerazione il fatto che una pompa, quando non è usabile, deve essere sostituita da una usabile. Bisogna quindi tenere traccia di questa pompa, nello specifico associare il fatto che questa nuova pompa ha sostituito un'altra pompa. Forse si può modificare l'ordine delle pompe, che deve essere sorgente di verità?
+
+Esempio (4 pompe, 3 max):
+
+```
+Ordine iniziale:
+     prima: pompa 1
+     seconda: pompa 2
+     terza: pompa 3
+
+Pompa 3 non è usabile
+
+Ordine modificato:
+     prima: pompa 1
+     seconda: pompa 2
+     terza: pompa 4
+
+Pompa 3 è usabile, Pompa 2 non è usabile
+
+Ordine modificato:
+     prima: pompa 1
+     seconda: pompa 3
+     terza: pompa 4
+
+```
+
+Quindi l'ordine viene mantenuto finché una pompa diventa non usabile.
 
 # Esercizio: 2 pompe, 2 max, 4 soglie, spegnimento graduale semplice
 
-Spegnimento graduale si riferisce ad avere più soglie in cui le pompe vengono disattivate. Cioè, invece di disattivare tutte le pompe all'aver passato sotto l'unica soglia minima, ci sono più soglie minime. 
+Spegnimento graduale si riferisce ad avere più soglie in cui le pompe vengono disattivate. Cioè, invece di disattivare tutte le pompe all'aver passato sotto l'unica soglia minima, ci sono più soglie minime.
 
-Questo permette alla portata di essere gestita in maniera più "fluida", meno brusca. 
+Questo permette alla portata di essere gestita in maniera più "fluida", meno brusca.
 
 Mi chiedo se debba esistere l'assunto che `min1 < max1 < min2 < max2`, o se abbia perfino senso domandarsi se abbia senso considerarlo.
 
@@ -31,16 +103,15 @@ L'attributo "semplice" si riferisce alla decisione di quale pompa viene scelta p
 
 Nello specifico, stiamo parlando di soglia minima e massima. Una soglia minima è una soglia tale che raggiungere sotto di quella soglia causa la disattivazione di una pompa (visto che stiamo associando una pompa a una coppia di soglie). Una soglia massima è una soglia tale che raggiungere sopra di quella soglia causa l'attivazione di una pompa.
 
-Quindi: 
+Quindi:
 
-- *Raggiunto sotto soglia minima* è un caso di falling edge (1 -> 0)
-- *Raggiunto sopra soglia massima* è un caso di rising edge (0 -> 1)
+- _Raggiunto sotto soglia minima_ è un caso di falling edge (1 -> 0)
+- _Raggiunto sopra soglia massima_ è un caso di rising edge (0 -> 1)
 
 Visto che stiamo associando una pompa ad una coppia di soglie, e ogni coppia di soglie ha soglia minima e soglia massima, allora per una data coppia di soglie, la stessa pompa verrà attivata o disattivata.
 
-
-```  
-    lvl                
+```
+    lvl
      ^
      |                                              ---
 max2 | ---------------------------------------------------
@@ -60,9 +131,7 @@ min1 | ---------------------------------------------------
 
 ```
 
-
 # Esercizio: 4 pompe, 3 max, 4 soglie, alternanza giornaliera con meno ore
-
 
 # Ragionamento A
 
@@ -82,19 +151,19 @@ Quindi:
 
 ```
 scan cycle:
-  
+
   if e_mezzanotte AND NOT deciso_ordine:
-    ordine_prima_pompa = pompa con meno ore lavorate tra quelle usabili 
+    ordine_prima_pompa = pompa con meno ore lavorate tra quelle usabili
     ordine_seconda_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_prima_pompa
     ordine_terza_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_seconda_pompa
     ordine_quarta_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != odine_terza_pompa
 
     deciso_ordine = true
 
-  if NOT e_mezzanotte: 
+  if NOT e_mezzanotte:
     deciso_ordine = false
 
-  
+
 
 
 ```
@@ -105,13 +174,11 @@ Funzionamento: Ad ogni soglia massima raggiunta, viene comandata la pompa nel ri
 
 Ad esempio, alla soglia 1 massima, viene comandata la pompa ordine_prima_pompa. Alla soglia 2 massima, viene comandata la pompa ordine_seconda_pompa.
 
-
 # Ragionamento B
 
 L'implementazione più semplice prevede un ordine delle pompe da comandare. Questo ordine non tiene in considerazione né l'usabilità della pompa al momento del rinnovo ordine, né se la pompa è attualmente comandata. Questo perché questi ultimi sono stati che possono cambiare in qualsiasi momento dopo il rinnovo ordine. Quindi è come fare un piano di battaglia, e poi adattarsi una volta in campo.
 
-Se una pompa (ad esempio, la prima pompa nell'ordine) risulta non usabile al momento di comando, allora la prima pompa usabile viene comandata. Quindi una volta rinnovato, l'ordine *non* viene modificato. Quindi se nessuna pompa diventa inusabile dal rinnovo dell'ordine, l'ordine al momento `t2` (poco prima del rinnovo dell'ordine X, ad esempio alle ore 23:59) mostra correttamente lo stesso ordine delle pompe, da quella con meno ore a quella con più ore, al momento `t1` (appena rinnovato l'ordine X, poco dopo le ore 00:00). 
-
+Se una pompa (ad esempio, la prima pompa nell'ordine) risulta non usabile al momento di comando, allora la prima pompa usabile viene comandata. Quindi una volta rinnovato, l'ordine _non_ viene modificato. Quindi se nessuna pompa diventa inusabile dal rinnovo dell'ordine, l'ordine al momento `t2` (poco prima del rinnovo dell'ordine X, ad esempio alle ore 23:59) mostra correttamente lo stesso ordine delle pompe, da quella con meno ore a quella con più ore, al momento `t1` (appena rinnovato l'ordine X, poco dopo le ore 00:00).
 
 # Esercizio: 4 pompe, 3 max, 4 soglie, alternanza meno ore
 
