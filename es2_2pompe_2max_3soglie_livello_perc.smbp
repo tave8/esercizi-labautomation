@@ -3,8 +3,8 @@
   <ProjectVersion>3.0.0.0</ProjectVersion>
   <ManagementLevel>FunctLevelMan21_0</ManagementLevel>
   <Name>es2_2pompe_2max_3soglie_livello_perc</Name>
-  <FullName>C:\Users\giuse\Desktop\PLC-projects\esercizi-labautomation\es2_2pompe_2max_3soglie_livello_perc.smbp</FullName>
-  <CurrentCultureName>en-GB</CurrentCultureName>
+  <FullName>C:\Users\Laboratorio-03\Desktop\esercizi-labautomation-main\esercizi-labautomation-main\es2_2pompe_2max_3soglie_livello_perc.smbp</FullName>
+  <CurrentCultureName>it-IT</CurrentCultureName>
   <SoftwareConfiguration>
     <Pous>
       <ProgramOrganizationUnits>
@@ -839,6 +839,22 @@
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines />
+            <Name />
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <ComparisonExpression />
                 <Row>0</Row>
                 <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>

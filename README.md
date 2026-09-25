@@ -1,33 +1,101 @@
+# Esercizio: 2 pompe, 2 max, 4 soglie, scelta spegnimento graduale o livello minimo
+
+
+
+strategia:
+
+0 = livello minimo
+
+1 = spegnimento graduale
+
+
+
+Lo spegnimento graduale deve tenere in considerazione tutte le coppie di soglie. Invece il livello minimo deve considerare solo la soglia minima comune. 
+
+
+
+Strategia Spegnimento graduale:
+
+
+
+max2 -- rising edge: attiva seconda pompa
+
+
+
+min2 -- falling edge: disattiva seconda pompa
+
+
+
+max1 -- rising edge: attiva prima pompa
+
+
+
+min1 -- falling edge: disattiva prima pompa
+
+
+
+
+
+Strategia Livello minimo:
+
+
+
+max2 -- rising edge: attiva seconda pompa
+
+
+
+min2 -- (ignora)
+
+
+
+max1 -- rising edge: attiva prima pompa
+
+
+
+min1 -- falling edge: disattiva tutte pompe
+
+
+
+
+
+\## Ragionamento A
+
+
+
+L'idea è quella di cercare di accorpare, unire le due strategie, cercando di generalizzare i punti in comune, creando difatti una nuova logica che include, alterna tra entrambe. Tuttavia credo che potrebbe essere più intelligente lasciare le due strategie separate a livello dell'intero programma, lasciando che la strategia scelta decida quale sotto-programma caricare. Con ogni sotto-programma si intende un insieme di componenti che eseguono una sola strategia, ad esempio solo livello minimo e solo spegnimento graduale.
+
+# 
+
 # Esercizio: 2 pompe, 2 max, misura di livello e richiesta attivazioni
 
 Il livello attuale non è più definito da soglie discrete, ma è un valore analogico. Il numero di pompe da attivare dipende dal livello raggiunto. Il livello raggiunto, espresso come valore analogico in input, va scalato. Per scalare questo livello analogico in percentuale, e quindi per determinare la percentuale di livello raggiunto, serve scalare questo livello analogico in input. Serve quindi definire il livello massimo, che rappresenta il 100%.
 
 ```
 INPUT
-  lvl_input (valore grezzo dal sensore. es: 0-10000)
-  soglia_min_perc
-  soglia_max1_perc
-  soglia_max2_perc
+  lvl\\\\\\\_input (valore grezzo dal sensore. es: 0-10000)
+  soglia\\\\\\\_min\\\\\\\_perc
+  soglia\\\\\\\_max1\\\\\\\_perc
+  soglia\\\\\\\_max2\\\\\\\_perc
 
 COSTANTI
-  min_scala_grezzo (minimo del valore grezzo del segnale. es: 0)
-  max_scala_grezzo (massimo del valore grezzo del segnale. es: 10000) 
-  min_scala_fisica (minimo fisico del sensore. es: 0cm)
-  max_scala_fisica (massimo fisico del sensore. es: 150cm)
+  min\\\\\\\_scala\\\\\\\_grezzo (minimo del valore grezzo del segnale. es: 0)
+  max\\\\\\\_scala\\\\\\\_grezzo (massimo del valore grezzo del segnale. es: 10000) 
+  min\\\\\\\_scala\\\\\\\_fisica (minimo fisico del sensore. es: 0cm)
+  max\\\\\\\_scala\\\\\\\_fisica (massimo fisico del sensore. es: 150cm)
 
 TEMP
-  lvl_perc
-  passato_soglia_min
-  passato_soglia_max1
-  passato_soglia_max2
+  lvl\\\\\\\_perc
+  passato\\\\\\\_soglia\\\\\\\_min
+  passato\\\\\\\_soglia\\\\\\\_max1
+  passato\\\\\\\_soglia\\\\\\\_max2
 
 OUTPUT
-  p1_cmd
-  p2_cmd
+  p1\\\\\\\_cmd
+  p2\\\\\\\_cmd
 
 ```
 
-livello_% = (valore_grezzo - grezzo_min) * 100 / (grezzo_max - grezzo_min)
+livello\_% = (valore\_grezzo - grezzo\_min) \* 100 / (grezzo\_max - grezzo\_min)
 
 
 
@@ -85,9 +153,32 @@ Ordine modificato:
      seconda: pompa 3
      terza: pompa 4
 
+
+Pompa 4 non è usabile
+
+
+
+Ordine modificato:
+     prima: pompa 1
+     seconda: pompa 3
+     terza: pompa 0
+
+
+
+
 ```
 
 Quindi l'ordine viene mantenuto finché una pompa diventa non usabile.
+
+
+
+
+
+
+
+
+
+
 
 # Esercizio: 2 pompe, 2 max, 4 soglie, spegnimento graduale semplice
 
@@ -105,8 +196,8 @@ Nello specifico, stiamo parlando di soglia minima e massima. Una soglia minima �
 
 Quindi:
 
-- _Raggiunto sotto soglia minima_ è un caso di falling edge (1 -> 0)
-- _Raggiunto sopra soglia massima_ è un caso di rising edge (0 -> 1)
+* *Raggiunto sotto soglia minima* è un caso di falling edge (1 -> 0)
+* *Raggiunto sopra soglia massima* è un caso di rising edge (0 -> 1)
 
 Visto che stiamo associando una pompa ad una coppia di soglie, e ogni coppia di soglie ha soglia minima e soglia massima, allora per una data coppia di soglie, la stessa pompa verrà attivata o disattivata.
 
@@ -143,7 +234,7 @@ Quell'ordine viene mantenuto fino al prossimo giorno, in cui l'ordine viene aggi
 
 Da una decisione alla prossima, l'ordine viene alterato solo se qualche pompa diventa non usabile.
 
-`ordine_prima_pompa` e simili variabili contengono il numero di pompa da attivare, nell'ordine specificato (prima, seconda, ecc.).
+`ordine\\\\\\\_prima\\\\\\\_pompa` e simili variabili contengono il numero di pompa da attivare, nell'ordine specificato (prima, seconda, ecc.).
 
 Se non esista una pompa in questo ordine (sarà uguale a 0), allora significa che non ci sono abbastanza pompe con meno ore, quindi imposta la prima che puoi.
 
@@ -152,16 +243,16 @@ Quindi:
 ```
 scan cycle:
 
-  if e_mezzanotte AND NOT deciso_ordine:
-    ordine_prima_pompa = pompa con meno ore lavorate tra quelle usabili
-    ordine_seconda_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_prima_pompa
-    ordine_terza_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine_seconda_pompa
-    ordine_quarta_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != odine_terza_pompa
+  if e\\\\\\\_mezzanotte AND NOT deciso\\\\\\\_ordine:
+    ordine\\\\\\\_prima\\\\\\\_pompa = pompa con meno ore lavorate tra quelle usabili
+    ordine\\\\\\\_seconda\\\\\\\_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine\\\\\\\_prima\\\\\\\_pompa
+    ordine\\\\\\\_terza\\\\\\\_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != ordine\\\\\\\_seconda\\\\\\\_pompa
+    ordine\\\\\\\_quarta\\\\\\\_pompa = pompa con meno ore lavorate tra quelle usabili AND pompa != odine\\\\\\\_terza\\\\\\\_pompa
 
-    deciso_ordine = true
+    deciso\\\\\\\_ordine = true
 
-  if NOT e_mezzanotte:
-    deciso_ordine = false
+  if NOT e\\\\\\\_mezzanotte:
+    deciso\\\\\\\_ordine = false
 
 
 
@@ -172,13 +263,13 @@ Se qualche pompa diventa non usabile (avendo già l'ordine pompe) bisogna modifi
 
 Funzionamento: Ad ogni soglia massima raggiunta, viene comandata la pompa nel rispettivo ordine già deciso.
 
-Ad esempio, alla soglia 1 massima, viene comandata la pompa ordine_prima_pompa. Alla soglia 2 massima, viene comandata la pompa ordine_seconda_pompa.
+Ad esempio, alla soglia 1 massima, viene comandata la pompa ordine\_prima\_pompa. Alla soglia 2 massima, viene comandata la pompa ordine\_seconda\_pompa.
 
 # Ragionamento B
 
 L'implementazione più semplice prevede un ordine delle pompe da comandare. Questo ordine non tiene in considerazione né l'usabilità della pompa al momento del rinnovo ordine, né se la pompa è attualmente comandata. Questo perché questi ultimi sono stati che possono cambiare in qualsiasi momento dopo il rinnovo ordine. Quindi è come fare un piano di battaglia, e poi adattarsi una volta in campo.
 
-Se una pompa (ad esempio, la prima pompa nell'ordine) risulta non usabile al momento di comando, allora la prima pompa usabile viene comandata. Quindi una volta rinnovato, l'ordine _non_ viene modificato. Quindi se nessuna pompa diventa inusabile dal rinnovo dell'ordine, l'ordine al momento `t2` (poco prima del rinnovo dell'ordine X, ad esempio alle ore 23:59) mostra correttamente lo stesso ordine delle pompe, da quella con meno ore a quella con più ore, al momento `t1` (appena rinnovato l'ordine X, poco dopo le ore 00:00).
+Se una pompa (ad esempio, la prima pompa nell'ordine) risulta non usabile al momento di comando, allora la prima pompa usabile viene comandata. Quindi una volta rinnovato, l'ordine *non* viene modificato. Quindi se nessuna pompa diventa inusabile dal rinnovo dell'ordine, l'ordine al momento `t2` (poco prima del rinnovo dell'ordine X, ad esempio alle ore 23:59) mostra correttamente lo stesso ordine delle pompe, da quella con meno ore a quella con più ore, al momento `t1` (appena rinnovato l'ordine X, poco dopo le ore 00:00).
 
 # Esercizio: 4 pompe, 3 max, 4 soglie, alternanza meno ore
 
@@ -192,16 +283,16 @@ Quindi, ad ogni soglia max raggiunta, comanda la pompa con minor ore lavorate, d
 
 ```
 scan cycle:
-    prossima_pompa_da_comandare = 0
-    ultimo_ore_lavorate = 0
+    prossima\\\\\\\_pompa\\\\\\\_da\\\\\\\_comandare = 0
+    ultimo\\\\\\\_ore\\\\\\\_lavorate = 0
 
     foreach pompa in pompe:
         if pompa.usabile AND NOT pompa.comandata:
-            if pompa.ore_lavorate < ultimo_ore_lavorate OR ultimo_ore_lavorate = 0:
-                prossima_pompa_da_comandare = pompa
-                ultimo_ore_lavorate = pompa.ore_lavorate
+            if pompa.ore\\\\\\\_lavorate < ultimo\\\\\\\_ore\\\\\\\_lavorate OR ultimo\\\\\\\_ore\\\\\\\_lavorate = 0:
+                prossima\\\\\\\_pompa\\\\\\\_da\\\\\\\_comandare = pompa
+                ultimo\\\\\\\_ore\\\\\\\_lavorate = pompa.ore\\\\\\\_lavorate
 
-    comanda prossima_pompa_da_comandare, se diversa da 0
+    comanda prossima\\\\\\\_pompa\\\\\\\_da\\\\\\\_comandare, se diversa da 0
 
 
 ```
@@ -230,13 +321,13 @@ Serve anche un meccanismo per impostare una strategia di default, se nessuna str
 
 `
 INPUT
-strategia_alternanza_avvio: bool
-strategia_alternanza_meno_ore_lavorate: bool
+strategia\_alternanza\_avvio: bool
+strategia\_alternanza\_meno\_ore\_lavorate: bool
 
 TEMP
 
 OUTPUT
-err_strategia_alternanza_ambigua: bool
+err\_strategia\_alternanza\_ambigua: bool
 
 `
 
@@ -258,13 +349,13 @@ Mappatura:
 
 `
 INPUT
-strategia_alternanza_input: int
+strategia\_alternanza\_input: int
 
 TEMP
-strategia_alternanza_attuale: int
+strategia\_alternanza\_attuale: int
 
 OUTPUT
-ERR_STRG_ALTERNANZA_INVALIDA: bool
+ERR\_STRG\_ALTERNANZA\_INVALIDA: bool
 `
 
 # Alternanza giornaliera
@@ -273,8 +364,8 @@ Alternanza giornaliera significa alternare le pompe al raggiungimento di una cer
 
 Per fare questo, possiedo due strumenti:
 
-- L'ora e minuto del PLC, che posso comparare con un orario predefinito (es: quando scocca mezzanotte, alterna pompe (imposta la prossima candidata))
-- Gli Schedule Blocks, che permettono di impostare dei bit con logiche di tempo specifiche (ogni giorno alle ore X, da ora Y ecc. -- alza il bit di una variabile)
+* L'ora e minuto del PLC, che posso comparare con un orario predefinito (es: quando scocca mezzanotte, alterna pompe (imposta la prossima candidata))
+* Gli Schedule Blocks, che permettono di impostare dei bit con logiche di tempo specifiche (ogni giorno alle ore X, da ora Y ecc. -- alza il bit di una variabile)
 
 Caso con 2 pompe: Quando scocca mezzanotte, modifica la prossima pompa candidata (ovviamente, solo se la prossima candidata è anche usabile).
 
@@ -296,32 +387,33 @@ In questa variente dell'altenrnanza pompe per numero ore, viene impostata il num
 Due pompe si alternano quando ognuna ha raggiunto il suo numero ore preset.
 
 INPUT
-numero_sec_preset
+numero\_sec\_preset
 
 VARIABILI TEMP
-pompa_1_numero_sec
-pompa_2_numero_sec
-pompa_1_superato_numero_sec
-pompa_2_superato_numero_sec
+pompa\_1\_numero\_sec
+pompa\_2\_numero\_sec
+pompa\_1\_superato\_numero\_sec
+pompa\_2\_superato\_numero\_sec
 
 Fintanto che una pompa è comandata, viene contato il tempo in cui è comandata. Se questo tempo supera il numero ore preset, allora questa pompa ha raggiunto il suo numero ore. Quando una pompa raggiunge il suo numero ore, il suo numero ore viene resettato e la prossima pompa candidata è l'altra pompa.
 
-p1_superato_numero_sec_lavorati := p1_numero_sec_lavorati > numero_sec_preset
+p1\_superato\_numero\_sec\_lavorati := p1\_numero\_sec\_lavorati > numero\_sec\_preset
 
-FINTANTO CHE pompa_1 E' COMANDATA:
-SE pompa_1_superato_numero_sec:
-prossima_pompa_candidata := pompa_2
+FINTANTO CHE pompa\_1 E' COMANDATA:
+SE pompa\_1\_superato\_numero\_sec:
+prossima\_pompa\_candidata := pompa\_2
 
-incrementa numero sec di pompa_1
+incrementa numero sec di pompa\_1
 
 # Esercizio: Alternanza 4 pompe, 1 alla volta, 2 soglie, con isteresi.
 
 ## Funzionalità
 
-- Sotto la soglia minima -> disattiva pompa
-- Sopra la soglia massima -> comanda pompa
-- Una volta comandata la pompa sopra la soglia massima, rimane comandata finché non livello raggiunge meno di soglia minima (isteresi)
-- Alternanza pompe da prima a ultima, in ordine numerico (1,2,3,4)
-- Massimo 1 pompa comandata alla volta
-- Quando la pompa attualmente comandata non è usabile, viene comandata la prima prossima pompa usabile
-- Le pompe non usabili vengono saltate automaticamente
+* Sotto la soglia minima -> disattiva pompa
+* Sopra la soglia massima -> comanda pompa
+* Una volta comandata la pompa sopra la soglia massima, rimane comandata finché non livello raggiunge meno di soglia minima (isteresi)
+* Alternanza pompe da prima a ultima, in ordine numerico (1,2,3,4)
+* Massimo 1 pompa comandata alla volta
+* Quando la pompa attualmente comandata non è usabile, viene comandata la prima prossima pompa usabile
+* Le pompe non usabili vengono saltate automaticamente
+
