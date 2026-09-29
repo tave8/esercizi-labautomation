@@ -1,3 +1,48 @@
+# Esercizio: 6 pompe, 5 max, 6 soglie, scelta spegnimento graduale o livello minimo
+
+Siccome c'è la scelta di spegnimento graduale a 6 soglie, si assume che ci siano 3 coppie di soglie. Rispetto ai casi precedenti in cui associavo una pompa a una soglia o coppia di soglie, in questo esercizio vi sono un numero variabile di pompe, in base a quale soglia è stata raggiunta.
+
+```
+
+Semplificazione di questo grafico:
+
+lvl  
+^                           --
+|                          |  |
+| max3                   --    --
+|                       |        |
+| min3                --          --
+|                    |              |
+| max2             --                -- 
+|                 |                    |
+| min2          --                      --
+|              |                          |
+| max1       --                            --
+|           |                                |
+| min1    --                                  --
+| 
+-----------------------------------------------------> t  
+
+
+          spegn. graduale     |       livello minimo
+      ------------------------------------------------------
+                                        
+max3     ^5                          ^5        
+                    
+min3             v3 
+
+max2     ^3                          ^3
+
+min2             v1           
+
+max1     ^1                          ^1                          
+
+min1             v0                          v0
+
+```
+
+
+
 # Esercizio: 2 pompe, 2 max, 4 soglie, scelta spegnimento graduale o livello minimo
 
 
