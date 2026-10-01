@@ -1,3 +1,10 @@
+# Esercizio: misura livello con scelta spegnimento graduale o livello minimo
+
+Ci sono due tipi di isteresi: Quella a spegnimento graduale, dove si assume che ci sono coppie di livelli, a quella a livello minimo, dove esiste solo una soglia minima comune. 
+
+
+
+
 # Esercizio: 6 pompe, 5 max, 6 soglie, scelta spegnimento graduale o livello minimo
 
 Siccome c'è la scelta di spegnimento graduale a 6 soglie, si assume che ci siano 3 coppie di soglie. Rispetto ai casi precedenti in cui associavo una pompa a una soglia o coppia di soglie, in questo esercizio vi sono un numero variabile di pompe, in base a quale soglia è stata raggiunta.
