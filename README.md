@@ -1,3 +1,5 @@
+
+
 # Esercizio: misura livello con scelta spegnimento graduale o livello minimo
 
 Ci sono due tipi di isteresi: Quella a spegnimento graduale, dove si assume che ci sono coppie di livelli, a quella a livello minimo, dove esiste solo una soglia minima comune. 

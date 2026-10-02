@@ -1,0 +1,293 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Pagina-1" id="benAaE5AoVvPncvDEUk9">
+    <mxGraphModel dx="1570" dy="1817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-31" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-53">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-32" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SI" vertex="1">
+          <mxGeometry relative="1" x="-0.1872" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-33" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-67">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="355.33333333333337" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-34" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.0887" y="-3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-1" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="NUM_POMPE_COMANDATE &amp;lt; NUM_POMPE_DA_COMANDARE&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="280" x="180" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-80" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="PROX_POMPA_CANDIDATA := (PROX_POMPA_CANDIDATA + 1) % NUM_POMPE" vertex="1">
+          <mxGeometry height="60" width="320" x="1074.5" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=24;" value="Algoritmo di Rotazione Pompe&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;basato su indici&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="720" x="590" y="-150" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-12" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=default;fontSize=16;fontStyle=1" value="VARIABILI" vertex="1">
+          <mxGeometry height="463" width="730" x="1650" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-13" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="53" width="730" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-14" parent="rcWMw7KmjLMf1sj7IXGb-13" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;b&gt;SIMBOLO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="53" width="300" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-47" parent="rcWMw7KmjLMf1sj7IXGb-13" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;fontStyle=1" value="TIPO" vertex="1">
+          <mxGeometry height="53" width="130" x="300" as="geometry">
+            <mxRectangle height="53" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-15" parent="rcWMw7KmjLMf1sj7IXGb-13" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;b&gt;SPIEGAZIONE&lt;/b&gt;" vertex="1">
+          <mxGeometry height="53" width="300" x="430" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-17" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="54" width="730" y="83" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-18" parent="rcWMw7KmjLMf1sj7IXGb-17" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;NUM_POMPE_COMANDATE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="54" width="300" as="geometry">
+            <mxRectangle height="54" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-48" parent="rcWMw7KmjLMf1sj7IXGb-17" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="INT" vertex="1">
+          <mxGeometry height="54" width="130" x="300" as="geometry">
+            <mxRectangle height="54" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-19" parent="rcWMw7KmjLMf1sj7IXGb-17" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;fontStyle=0" value="Numero di pompe attualmente comandate" vertex="1">
+          <mxGeometry height="54" width="300" x="430" as="geometry">
+            <mxRectangle height="54" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-21" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="53" width="730" y="137" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-22" parent="rcWMw7KmjLMf1sj7IXGb-21" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;NUM_POMPE_DA_COMANDARE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="53" width="300" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-49" parent="rcWMw7KmjLMf1sj7IXGb-21" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="INT" vertex="1">
+          <mxGeometry height="53" width="130" x="300" as="geometry">
+            <mxRectangle height="53" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-23" parent="rcWMw7KmjLMf1sj7IXGb-21" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="Numero di pompe da comandare" vertex="1">
+          <mxGeometry height="53" width="300" x="430" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-25" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="53" width="730" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-26" parent="rcWMw7KmjLMf1sj7IXGb-25" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;NUM_POMPE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="53" width="300" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-50" parent="rcWMw7KmjLMf1sj7IXGb-25" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="INT" vertex="1">
+          <mxGeometry height="53" width="130" x="300" as="geometry">
+            <mxRectangle height="53" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-27" parent="rcWMw7KmjLMf1sj7IXGb-25" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="Numero totali di pompe" vertex="1">
+          <mxGeometry height="53" width="300" x="430" as="geometry">
+            <mxRectangle height="53" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-28" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="54" width="730" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-29" parent="rcWMw7KmjLMf1sj7IXGb-28" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;PROX_POMPA_CANDIDATA&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="54" width="300" as="geometry">
+            <mxRectangle height="54" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-51" parent="rcWMw7KmjLMf1sj7IXGb-28" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="INT" vertex="1">
+          <mxGeometry height="54" width="130" x="300" as="geometry">
+            <mxRectangle height="54" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-30" parent="rcWMw7KmjLMf1sj7IXGb-28" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="Prossima pompa da comandare, espressa come identificativo (indice)" vertex="1">
+          <mxGeometry height="54" width="300" x="430" as="geometry">
+            <mxRectangle height="54" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-37" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="83" width="730" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-38" parent="rcWMw7KmjLMf1sj7IXGb-37" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="VISITATO_TUTTE_POMPE_CANDIDATE" vertex="1">
+          <mxGeometry height="83" width="300" as="geometry">
+            <mxRectangle height="83" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-52" parent="rcWMw7KmjLMf1sj7IXGb-37" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="BOOL" vertex="1">
+          <mxGeometry height="83" width="130" x="300" as="geometry">
+            <mxRectangle height="83" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-39" parent="rcWMw7KmjLMf1sj7IXGb-37" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="Tutte le pompe sono state visitate, quindi non bisogna continuare a cercare la prossima pompa candidata.&amp;nbsp;" vertex="1">
+          <mxGeometry height="83" width="300" x="430" as="geometry">
+            <mxRectangle height="83" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-69" parent="rcWMw7KmjLMf1sj7IXGb-12" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1">
+          <mxGeometry height="83" width="730" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-70" parent="rcWMw7KmjLMf1sj7IXGb-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="CONTA_POMPE_CANDIDATE_VISITATE" vertex="1">
+          <mxGeometry height="83" width="300" as="geometry">
+            <mxRectangle height="83" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-71" parent="rcWMw7KmjLMf1sj7IXGb-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="INT" vertex="1">
+          <mxGeometry height="83" width="130" x="300" as="geometry">
+            <mxRectangle height="83" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-72" parent="rcWMw7KmjLMf1sj7IXGb-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" value="Il conteggio di quante pompe sono state visitate &quot;nello stesso giro&quot; di ricerca, per trovare la prossima candidata." vertex="1">
+          <mxGeometry height="83" width="300" x="430" as="geometry">
+            <mxRectangle height="83" width="300" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-35" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=10;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" value="Serve comandare qualche pompa" vertex="1">
+          <mxGeometry height="60" width="80" x="230" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-59" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-60" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-59" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SI" vertex="1">
+          <mxGeometry relative="1" x="-0.26" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-61" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-62" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-61" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.2476" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-40" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;PROX_POMPA_CANDIDATA (è ok e non comandata)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="280" x="560" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-54" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-55" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-54" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.3673" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-56" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-67">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="510" />
+              <mxPoint x="870" y="510" />
+            </Array>
+            <mxPoint x="320" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-57" connectable="0" parent="rcWMw7KmjLMf1sj7IXGb-56" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SI" vertex="1">
+          <mxGeometry relative="1" x="-0.2143" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-53" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="VISITATO_TUTTE_POMPE_CANDIDATE" vertex="1">
+          <mxGeometry height="170" width="280" x="180" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-63" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-64">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-58" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="Comanda PROX_POMPA_CANDIDATA" vertex="1">
+          <mxGeometry height="60" width="320" x="540" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-65" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1410" />
+              <mxPoint x="700" y="1470" />
+              <mxPoint x="60" y="1470" />
+              <mxPoint x="60" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-75" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-64" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="NUM_POMPE_COMANDATE :=&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;NUM_POMPE_COMANDATE + 1&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="340" x="530" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-67" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fillColor=#A9C4EB;" value="CONTINUA&amp;nbsp; PROGRAMMA" vertex="1">
+          <mxGeometry height="60" width="320" x="710" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-68" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#A9C4EB;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="319.5" y="160" as="sourcePoint" />
+            <mxPoint x="319.5" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-81" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-73" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="CONTA_POMPE_CANDIDATE_VISITATE :=&amp;nbsp;&lt;span style=&quot;text-decoration-line: inherit; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CONTA_POMPE_CANDIDATE_VISITATE + 1&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="320" x="1074.5" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-83" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-82">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-74" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="CONTA_POMPE_CANDIDATE_VISITATE := 0" vertex="1">
+          <mxGeometry height="60" width="320" x="540" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-79" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-53">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1234.5" y="1150" />
+              <mxPoint x="1460" y="1150" />
+              <mxPoint x="1460" y="590" />
+              <mxPoint x="320" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-76" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="VISITATO_TUTTE_POMPE_CANDIDATE :=&amp;nbsp;&lt;span style=&quot;text-decoration-line: inherit; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CONTA_POMPE_CANDIDATE_VISITATE = NUM_POMPE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="389" x="1040" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-77" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=13;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" value="Puoi comandare questa pompa" vertex="1">
+          <mxGeometry height="60" width="90" x="580" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-82" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="VISITATO_TUTTE_POMPE_CANDIDATE := false" vertex="1">
+          <mxGeometry height="60" width="389" x="520" y="1350" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-84" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=14;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" value="Eleziona la prossima pompa candidata (Non puoi comandare questa pompa)" vertex="1">
+          <mxGeometry height="75" width="145" x="827" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-85" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Obiettivo dell&#39;algoritmo è disaccoppiare il numero di pompe dalla logica di rotazione, oltre che usare un loop con la stessa logica, invece di dover legare la logica di rotazione ad ogni pompa. Viene usata una rotazione semplice basata su indici, quindi ad ogni pompa viene assegnato un indice. Nel caso banale, sia dato N l&#39;indice dell&#39;ultima pompa comandata, allora&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;la prossima pompa candidata è l&#39;indice (N+1) % NUM_POMPE, visto che gli indici ripartono da capo.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;L&#39;algoritmo impiega il concetto di &quot;numero di pompe da comandare&quot; e &quot;numero pompe comandate&quot; per sapere se servono pompe da comandare in un dato momento. Sapere se e quante pompe da comandare si ottiene semplicemente comparando il numero di pompe comandate da quelle da comandare. Se il numero di pompe comandate è strettamente inferiore al numero di pompe da comandare, allora serve qualche pompa da comandare.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Non esiste il concetto di richiesta pompa da comandare -- invece si usa la stessa logica &quot;num_pompe_comandate &amp;lt; num_pompe_da_comandare&quot; in un loop, quindi appena si comanda una pompa, si incrementa il numero di pompe comandate.&amp;nbsp; &amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;La prossima pompa candidata è un indice che si aggiorna da 0 fino al numero di pompe-1, in modo circolare (0,1,2,3,0,1,2,3,ecc.). La flag &quot;visitato_tutte_pompe_candidate&quot; indica se tutte le pompe possibili sono state considerate come candidate durante &quot;lo stesso giro di tentativi&quot;. Questo serve per evitare di continuare a ricercare la prossima pompa candidata circolarmente all&#39;infinito.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="260" width="580" x="710" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-86" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="rcWMw7KmjLMf1sj7IXGb-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
