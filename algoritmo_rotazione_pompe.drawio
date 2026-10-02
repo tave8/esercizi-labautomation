@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Pagina-1" id="benAaE5AoVvPncvDEUk9">
-    <mxGraphModel dx="1570" dy="1817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2006" dy="2009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -186,7 +186,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rcWMw7KmjLMf1sj7IXGb-40" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;PROX_POMPA_CANDIDATA (è ok e non comandata)&lt;/div&gt;" vertex="1">
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-40" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;PROX_POMPA_CANDIDATA&amp;nbsp;&lt;/div&gt;&lt;div&gt;(è ok e non comandata)&lt;/div&gt;" vertex="1">
           <mxGeometry height="170" width="280" x="560" y="750" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-54" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-40">
@@ -225,18 +225,17 @@
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-65" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="700" y="1410" />
-              <mxPoint x="700" y="1470" />
-              <mxPoint x="60" y="1470" />
+              <mxPoint x="700" y="1520" />
+              <mxPoint x="60" y="1520" />
               <mxPoint x="60" y="355" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="rcWMw7KmjLMf1sj7IXGb-75" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-74">
+        <mxCell id="rcWMw7KmjLMf1sj7IXGb-75" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="yggVYv0Si4pXDSv2QBdq-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-64" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="NUM_POMPE_COMANDATE :=&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;NUM_POMPE_COMANDATE + 1&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="340" x="530" y="1150" as="geometry" />
+          <mxGeometry height="60" width="340" x="530" y="1115" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-67" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;fillColor=#A9C4EB;" value="CONTINUA&amp;nbsp; PROGRAMMA" vertex="1">
           <mxGeometry height="60" width="320" x="710" y="325" as="geometry" />
@@ -257,7 +256,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-74" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="CONTA_POMPE_CANDIDATE_VISITATE := 0" vertex="1">
-          <mxGeometry height="60" width="320" x="540" y="1260" as="geometry" />
+          <mxGeometry height="60" width="320" x="540" y="1300" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-79" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-53">
           <mxGeometry relative="1" as="geometry">
@@ -276,7 +275,7 @@
           <mxGeometry height="60" width="90" x="580" y="910" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-82" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="VISITATO_TUTTE_POMPE_CANDIDATE := false" vertex="1">
-          <mxGeometry height="60" width="389" x="520" y="1350" as="geometry" />
+          <mxGeometry height="60" width="320" x="540" y="1400" as="geometry" />
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-84" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=14;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" value="Eleziona la prossima pompa candidata (Non puoi comandare questa pompa)" vertex="1">
           <mxGeometry height="75" width="145" x="827" y="740" as="geometry" />
@@ -286,6 +285,15 @@
         </mxCell>
         <mxCell id="rcWMw7KmjLMf1sj7IXGb-86" edge="1" parent="1" source="rcWMw7KmjLMf1sj7IXGb-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="rcWMw7KmjLMf1sj7IXGb-4">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yggVYv0Si4pXDSv2QBdq-4" edge="1" parent="1" source="yggVYv0Si4pXDSv2QBdq-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="rcWMw7KmjLMf1sj7IXGb-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yggVYv0Si4pXDSv2QBdq-3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="PROX_POMPA_CANDIDATA := (PROX_POMPA_CANDIDATA + 1) % NUM_POMPE" vertex="1">
+          <mxGeometry height="60" width="320" x="540" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="yggVYv0Si4pXDSv2QBdq-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;autosizeText=1;fontColor=#000000;darkOpacity=0.05;fillColor=#FFF9B2;strokeColor=none;fillStyle=solid;fontSize=15;direction=west;gradientDirection=north;gradientColor=#FFF2A1;shadow=1;size=20;pointerEvents=1;" value="Eleziona subito prox pompa candidata (opzionale)" vertex="1">
+          <mxGeometry height="75" width="145" x="370" y="1202.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
